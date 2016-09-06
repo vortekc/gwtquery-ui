@@ -3,7 +3,7 @@
   <groupId>com.google.gwt</groupId>
   <artifactId>gwtquery-ui-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>r147</version>
   <name>GwtQuery UI Plugin Project</name>
   <url>http://gwtquery-ui.googlecode.com</url>
   <description>GwtQuery UI is a plugin for GwtQuery for integrating JQuery UI.</description>
@@ -26,14 +26,14 @@
   </developers>
 
   <scm>
-    <connection>scm:svn:http://gwtquery-ui.googlecode.com/svn/trunk</connection>
-    <developerConnection>scm:svn:https://gwtquery-ui.googlecode.com/svn/trunk</developerConnection>
-    <url>http://code.google.com/p/gwtquery-ui/source/browse/trunk</url>
+    <connection>scm:svn:http://gwtquery-ui.googlecode.com/svn/tags/gwtquery-ui-parent-r147</connection>
+    <developerConnection>scm:svn:https://gwtquery-ui.googlecode.com/svn/tags/gwtquery-ui-parent-r147</developerConnection>
+    <url>http://code.google.com/p/gwtquery-ui/source/browse/tags/gwtquery-ui-parent-r147</url>
   </scm>
 
   <modules>
     <module>plugin</module>
-    <module>samples</module>
+    <!--<module>samples</module>-->
   </modules>
 
   <distributionManagement>
@@ -51,7 +51,6 @@
         <artifactId>gwtquery</artifactId>
         <version>${gwtquery.version}</version>
         <type>jar</type>
-        <classifier>${gwtquery.classifier}</classifier>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -61,7 +60,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.0</version>
+        <version>2.5.3</version>
         <configuration>
           <releaseProfiles>prod</releaseProfiles>
           <tagBase>https://gwtquery-ui.googlecode.com/svn/tags</tagBase>
@@ -71,9 +70,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>
@@ -89,18 +89,15 @@
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>changelog-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.5</version>
         <configuration>
-          <aggregate>true</aggregate>
         </configuration>
       </plugin>
     </plugins>
@@ -127,10 +124,10 @@
       </activation>
 
       <properties>
-        <gwt.version>2.2.0</gwt.version>
+        <gwt.version>2.7.0</gwt.version>
         <gwtquery.groupId>com.googlecode.gwtquery</gwtquery.groupId>
-        <gwtquery.version>1.0.0</gwtquery.version>
-        <gwtquery.classifier>2.2.0</gwtquery.classifier>
+        <gwtquery.version>1.4.3</gwtquery.version>
+        <gwtquery.classifier>1.4.3</gwtquery.classifier>
         <gwt.loglevel>INFO</gwt.loglevel>
         <gwt.outputstyle>PRETTY</gwt.outputstyle>
         <gwt.modulesuffix />
@@ -140,10 +137,10 @@
     <profile>
       <id>dev</id>
       <properties>
-        <gwt.version>2.2.0</gwt.version>
+        <gwt.version>2.7.0</gwt.version>
         <gwtquery.groupId>com.googlecode.gwtquery</gwtquery.groupId>
-        <gwtquery.version>1.0.0</gwtquery.version>
-        <gwtquery.classifier>2.2.0</gwtquery.classifier>
+        <gwtquery.version>1.4.3</gwtquery.version>
+        <gwtquery.classifier>1.4.3</gwtquery.classifier>
         <gwt.loglevel>WARN</gwt.loglevel>
         <gwt.modulesuffix>Dev</gwt.modulesuffix>
         <gwt.outputstyle>PRETTY</gwt.outputstyle>
@@ -153,10 +150,10 @@
     <profile>
       <id>prod</id>
       <properties>
-        <gwt.version>2.2.0</gwt.version>
+        <gwt.version>2.7.0</gwt.version>
         <gwtquery.groupId>com.googlecode.gwtquery</gwtquery.groupId>
-        <gwtquery.version>1.0.0</gwtquery.version>
-        <gwtquery.classifier>2.2.0</gwtquery.classifier>
+        <gwtquery.version>1.4.3</gwtquery.version>
+        <gwtquery.classifier>1.4.3</gwtquery.classifier>
         <gwt.loglevel>ERROR</gwt.loglevel>
         <gwt.outputstyle>OBF</gwt.outputstyle>
         <gwt.modulesuffix />
